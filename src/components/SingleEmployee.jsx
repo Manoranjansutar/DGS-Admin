@@ -49,7 +49,7 @@ const SingleEmployee = () => {
           `https://dgs-backend-yo9v.onrender.com/api/v1/employee/getSingleEmployee/${id}`
         )
         .then((res) => {
-          console.log(res);
+         
           setSingleEmployee(res.data.employee);
         });
     } catch (error) {
@@ -66,8 +66,7 @@ const SingleEmployee = () => {
       "https://dgs-backend-yo9v.onrender.com/api/v1/employee/employeePerformance",
       { id }
     );
-    console.log(res);
-    // return res.data.data
+   
     setPerformance(res.data.data);
   };
 
@@ -80,7 +79,7 @@ const SingleEmployee = () => {
       "https://dgs-backend-yo9v.onrender.com/api/v1/employee/employeeGrievancePerformance",
       { id }
     );
-    console.log(res);
+    
     setGrievancePerformance(res.data.data);
   };
 
