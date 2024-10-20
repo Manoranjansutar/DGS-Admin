@@ -32,14 +32,14 @@ const AdminProvider = ({ children }) => {
   const [totalCloseGrievance, setCloseGrievance] = useState(0);
 
   const login = async (formData) => {
-    console.log(formData);
+    
     try {
       const response = await axios.post(
         "https://dgs-backend-yo9v.onrender.com/api/v1/admin/loginAdmin",
         formData
       );
 
-      console.log(response);
+      
 
       const { token, admin, id } = response.data;
 
@@ -83,7 +83,7 @@ const AdminProvider = ({ children }) => {
       const res = await axios.get(
         `https://dgs-backend-yo9v.onrender.com/api/v1/admin/getSingleAdmin/${id}`
       );
-      console.log(res);
+      
       setAdmin(res.data.admin);
     } catch (error) {
       console.error(error);
@@ -100,7 +100,7 @@ const AdminProvider = ({ children }) => {
       const res = await axios.get(
         "https://dgs-backend-yo9v.onrender.com/api/v1/employee/getEmployees"
       );
-      console.log(res);
+     
       setEmployees(res.data.employees);
     } catch (error) {
       console.log(error);
@@ -118,7 +118,7 @@ const AdminProvider = ({ children }) => {
           `https://dgs-backend-yo9v.onrender.com/api/v1/employee/getSingleEmployee/${id}`
         )
         .then((res) => {
-          console.log(res);
+         
           setSingleEmployee(res.data.employee);
         });
     } catch (error) {
@@ -160,7 +160,7 @@ const AdminProvider = ({ children }) => {
           "https://dgs-backend-yo9v.onrender.com/api/v1/user/scheme/getAllSchemes"
         )
         .then((res) => {
-          console.log(res);
+        
           setTickets(res.data.schemes);
           let approved = 0;
           let pending = 0;
@@ -195,7 +195,7 @@ const AdminProvider = ({ children }) => {
           `https://dgs-backend-yo9v.onrender.com/api/v1/user/scheme/getSingleScheme/${id}`
         )
         .then((res) => {
-          console.log(res);
+          
           setSingleTicket(res.data.appliedScheme);
         });
     } catch (error) {
@@ -225,20 +225,20 @@ const AdminProvider = ({ children }) => {
       const res = await axios.post(
         "https://dgs-backend-yo9v.onrender.com/api/v1/notification/getAdminNotifications"
       );
-      console.log(res, localStorage.getItem("id"));
+      
       const filteredNotifications = res.data?.notifications?.filter(
         (notification) =>
           notification?.recipientId?._id === localStorage.getItem("id")
       );
-      console.log(filteredNotifications);
+     
       setNotifications(filteredNotifications);
       const filterNotificationCount = res.data.notifications.filter(
         (notification) =>
           notification.recipientId._id === id && !notification.read
       );
-      console.log(filterNotificationCount);
+     
       setNotificationCount(filterNotificationCount.length);
-      console.log(notificationCount);
+     
     } catch (error) {
       console.log(error);
     }
@@ -274,7 +274,7 @@ const AdminProvider = ({ children }) => {
       const res = await axios.get(
         "https://dgs-backend-yo9v.onrender.com/api/v1/grievances/getAllGrievance"
       );
-      console.log(res);
+      
       setGrievance(res.data.grievance);
       setTotalGrievance(res.data.grievance.length);
       let open = 0;
@@ -320,7 +320,7 @@ const AdminProvider = ({ children }) => {
           `https://dgs-backend-yo9v.onrender.com/api/v1/grievances/getSingleGrievance/${id}`
         )
         .then((res) => {
-          console.log(res);
+        
           setSingleGrievance(res.data.grievance);
         });
     } catch (error) {
@@ -342,7 +342,7 @@ const AdminProvider = ({ children }) => {
           { sender, senderType }
         )
         .then((res) => {
-          console.log(res);
+          
           setUniqueRecipients(res.data.recipients);
         });
     } catch (error) {
