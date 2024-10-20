@@ -26,7 +26,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(formData);
+   
     await login(formData);
     toast(
       <div className="w-full p-4 text-white bg-green-900 rounded-lg">
