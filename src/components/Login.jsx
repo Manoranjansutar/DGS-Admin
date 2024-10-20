@@ -14,15 +14,7 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
-  // const handleLogin = async(e) =>{
-  //   e.preventDefault();
-  //   await axios.post("https://dgs-backend-yo9v.onrender.com/api/v1/admin/loginAdmin",formData).then((res)=>{
-  //     if(res.data.success){
-  //       localStorage.setItem("token",res.data.token);
-  //       navigate("/")
-  //     }
-  //   })
-  // }
+ 
 
   const { login, error, isAuthenticated } = useContext(AdminContext);
 
