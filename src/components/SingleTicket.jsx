@@ -36,7 +36,7 @@ const SingleTicket = () => {
     id: localStorage.getItem("id"),
   });
 
-  console.log(localStorage.getItem("id"));
+  
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,14 +50,14 @@ const SingleTicket = () => {
 
   const handleSubmit = async () => {
     try {
-      console.log(formData);
+     
       await axios
         .post(
           "https://dgs-backend-yo9v.onrender.com/api/v1/admin/changeStatus",
           formData
         )
         .then((res) => {
-          console.log(res);
+         
           setError(res.data.message);
           if (res.data.message === "Status updated successfully") {
             getSingleAppliedScheme(id);
