@@ -15,7 +15,7 @@ import { AdminContext } from "./context/adminContext";
 
 const Grievances = () => {
   const { grievance } = useContext(AdminContext);
-  console.log(grievance)
+  
   return (
    <div className="pt-10 lg:pt-0">
       <Table >
