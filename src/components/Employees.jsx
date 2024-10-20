@@ -14,7 +14,7 @@ import { Button } from "./ui/button";
 
 const Employees = () => {
   const { employees } = useContext(AdminContext);
-  console.log(employees);
+  
   return (
     <div>
       <h1>Employees</h1>
