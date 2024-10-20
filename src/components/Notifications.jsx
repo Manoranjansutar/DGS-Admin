@@ -16,8 +16,8 @@ const Notifications = () => {
   };
 
   const handleDelete = async (id) => {
-    console.log("delete initiated");
-    console.log(id);
+    
+ 
     await axios
       .post(
         "https://dgs-backend-yo9v.onrender.com/api/v1/notification/deleteNotification",
@@ -30,7 +30,7 @@ const Notifications = () => {
             <h1 className="text-md">Notification deleted successfully</h1>
           </div>
         );
-        console.log("delete completed");
+       
       });
   };
 
